@@ -1,0 +1,156 @@
+//--------------------------------------------------------------
+// STYLES
+// CSS for both Frontend+Backend.
+//--------------------------------------------------------------
+
+.wp-block-unicard-block-unicard  {
+	background-color: transparent;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+
+	// Needed to override
+	.entry .entry-content & {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&.alignfull {
+
+		.card-image {
+			max-height: rem(600);
+			overflow: hidden;
+		} // .card-image
+
+	} // &.alignfull
+
+	&.alignwide {
+
+		.card-image {
+			max-height: rem(750);
+			overflow: hidden;
+		} // .card-image
+
+	} // &.alignwide
+
+	&.row {
+		align-items: center;
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		.card-image {
+			flex: 1;
+
+			img {
+				height: 100%;
+				object-fit: cover;
+				width: auto;
+			} // img
+		} // .card-image
+
+		.card-content {
+			flex: 1;
+			padding: 0;
+
+			.card-title,
+			.card-description {
+				padding: 0 rem(30);
+			} // .card-title, .card-description
+		} // .card-content
+	} // &.row
+
+	&.row-reverse {
+		align-items: center;
+		flex-direction: row-reverse;
+		flex-wrap: wrap;
+
+		.card-image {
+			flex: 1;
+
+			img {
+				height: 100%;
+				object-fit: cover;
+				width: auto;
+			} // img
+		} // .card-image
+
+		.card-content {
+			flex: 1;
+			padding: rem(10) 0;
+
+			.card-title,
+			.card-description {
+				padding: 0 rem(30);
+			} // .card-title, .card-description
+		} // .card-content
+	} // &.row-reverse
+
+	&.column-reverse {
+		flex-direction: column-reverse;
+	} // &.column-reverse
+
+	.card-image {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+
+		.featured-image {
+			height: auto;
+			object-fit: cover;
+			object-position: center;
+			width: 100%;
+		} // .featured-image
+
+	} // .card-image
+
+	.card-content {
+		flex: 1;
+		padding: rem(30);
+
+		&:empty {
+			display: none;
+		} // &:blank
+
+		.card-title {
+			h3 {
+				margin: rem(20) 0;
+			}
+		} // .card-title
+
+		.card-description {
+
+			p {
+				margin-bottom: rem(20);
+				padding: rem(10) 0 0;
+			} // p
+
+		} // .card-description
+
+	} // .card-content
+
+	@media all and (max-width: $iphone) {
+		&.row {
+			flex-direction: column;
+
+			.card-content {
+				padding: rem(30) 0;
+			} // .card-content
+		} // &.row
+
+		&.row-reverse {
+			flex-direction: column-reverse;
+
+			.card-content {
+				padding: rem(30) 0;
+			} // .card-content
+		} // &.row-reverse
+
+		.card-image {
+
+			img {
+				max-height: rem(500);
+			} // img
+		} // .card-image
+	} // max-width: $iphone
+
+} // .wp-block-unicard-block-unicard
